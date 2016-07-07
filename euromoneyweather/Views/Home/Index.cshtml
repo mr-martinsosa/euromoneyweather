@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>EuroWeather</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Welcome to EuroWeather</h2>
+        <p>
+            EuroWeather is a simple web application that shows the weather for the capital cities of Europe.
+        </p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#button").click(function () {
+            $.get("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=b00df8320d7abd81c15776e43bd17af1&units=metric", function (response) {
+                console.log(response)
+                
+            });
+        });
+    });
+
+</script>
+
+<!-- Tirana
+Andorra la Vella
+Yerevan
+Vienna
+Baku
+Minsk
+Brussels
+Sarajevo
+Sofia
+Zagreb
+Nicosia
+Prague
+Copenhagen
+Tallinn
+Helsinki
+Paris 
+Tbilisi
+Berlin
+Athens
+Budapest
+Reykjavik
+Dublin
+Rome
+Astana
+Pristina
+Riga
+Vaduz
+Vilnius
+Luxembourg
+Skopje
+Valletta
+Chisinau
+onaco
+Podgorica
+Amsterdam
+Oslo
+Warsaw
+Lisbon
+Bucharest
+Moscow
+San Marino
+Belgrade
+Bratislava
+Ljubljana
+Madrid
+Stockholm
+Bern
+Ankara
+Kyiv
+London
+Vatican City
+-->

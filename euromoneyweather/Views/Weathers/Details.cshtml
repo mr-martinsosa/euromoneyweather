@@ -1,0 +1,66 @@
+﻿@model euromoneyweather.Models.Weather
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Weather</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Humidity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Humidity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WeatherID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

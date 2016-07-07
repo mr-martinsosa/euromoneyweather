@@ -1,0 +1,70 @@
+﻿@model IEnumerable<euromoneyweather.Models.Weather>
+@*@model IEnumerable<euromoneyweather.Models.Country>*@
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Filter by Temperature(Main,Max,Min)/City/Humidity:
+
+        @Html.TextBox("searchMainTemp") @Html.TextBox("searchMaxTemp") @Html.TextBox("searchMinTemp") @Html.TextBox("searchHumidity") @Html.TextBox("searchCity")
+        <input type="submit" value="Search" />
+    </p>
+    <p>
+        In the case of Temperatures, results returned will be higher than input, IE: You search 20, anything under 20 C will be filtered out.
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.aCountry.CityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MainTemp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxTemp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinTemp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Humidity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.aCountry.CityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Humidity)
+            </td>
+        </tr>
+    }
+
+</table>

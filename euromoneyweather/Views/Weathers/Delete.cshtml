@@ -1,0 +1,72 @@
+﻿@model euromoneyweather.Models.Weather
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Weather</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Humidity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Humidity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
