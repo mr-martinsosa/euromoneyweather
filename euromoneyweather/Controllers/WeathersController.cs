@@ -31,26 +31,26 @@ namespace euromoneyweather.Controllers
                     //|| t.Humidity > (searchTemp));
                                        );
             }
-            else if (searchMaxTemp != null)
+            if (searchMaxTemp != null)
             {
                 
                 temp = temp.Where(t => t.MainTemp > (searchMaxTemp)
                                        );
             }
-            else if (searchMinTemp != null)
+            if (searchMinTemp != null)
             {
 
                 temp = temp.Where(t => t.MinTemp > (searchMinTemp)
                                        );
             }
            
-            else if (searchHumidity != null)
+            if (searchHumidity != null)
             {
 
                 temp = temp.Where(t => t.Humidity > (searchHumidity));
                                        
             }
-            else if (!String.IsNullOrEmpty(searchCity))
+            if (!String.IsNullOrEmpty(searchCity))
             {
                 temp = temp.Where(t => t.aCountry.CityName.Contains(searchCity));
             }
